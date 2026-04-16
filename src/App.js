@@ -1,11 +1,10 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import ViewProducts from './components/ViewProducts'
+import Navigation from './routes/Navigation.js'
 
 function App() {
   return (
     <div>
-        <ViewProducts/>
+        <Navigation/>
     </div>
   )
 }
