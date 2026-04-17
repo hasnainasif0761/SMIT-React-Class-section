@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import HeroSection from './HeroSection';
 
 const Navbar = () => {
     const styles = {
@@ -50,7 +51,7 @@ const Navbar = () => {
       </div>
       <button style={styles.button}>Login</button>
     </div>
-
+    <HeroSection/>
     </>
   )
 }
