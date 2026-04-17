@@ -18,7 +18,9 @@ const HeroSection = () => {
       modules={[Pagination]}
       className="mySwiper"
       >
-        <SwiperSlide>Slider no 1</SwiperSlide>
+        <SwiperSlide>
+            <img src="https://static.vecteezy.com/system/resources/previews/004/299/835/non_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg" alt="" />
+        </SwiperSlide>
         <SwiperSlide>Slider no 2</SwiperSlide>
         <SwiperSlide>Slider no 3</SwiperSlide>
       </Swiper>  

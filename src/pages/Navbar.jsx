@@ -1,58 +1,50 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import HeroSection from './HeroSection';
+import { Link } from 'react-router-dom'
+import logo from '../assets/image/logo-light.svg'
+
+import { MdOutlineWbSunny } from "react-icons/md";
+import { IoSearchOutline } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa";
+import { IoBagOutline } from "react-icons/io5";
+import { HiOutlineMenu } from "react-icons/hi";
+
+import '../assets/css/Navbar.css'
 
 const Navbar = () => {
-    const styles = {
-    navbar: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      backgroundColor: "#0f172a",
-      padding: "15px 40px"
-    },
-    logo: {
-      color: "#fff",
-      fontSize: "22px",
-      fontWeight: "bold"
-    },
-    navLinks: {
-      display: "flex",
-      gap: "25px"
-    },
-    link: {
-      textDecoration: "none",
-      color: "#cbd5f5",
-      fontSize: "16px",
-      transition: "0.3s"
-    },
-    button: {
-      padding: "8px 18px",
-      backgroundColor: "#38bdf8",
-      border: "none",
-      borderRadius: "6px",
-      color: "#000",
-      cursor: "pointer",
-      fontWeight: "bold"
-    }
-  };
-    return (
-        <>
-        <div style={styles.navbar}>
-      <div style={styles.logo}>MyApp</div>
+  return (
+    <nav className="navbar">
 
-      <div style={styles.navLinks}>
-        <Link to={'/'} style={styles.link}>Home</Link>
-        <Link to={'/about'} style={styles.link}>About</Link>
-        <Link to={'/services'} style={styles.link}>Services</Link>
-        <Link to={'/contact'} style={styles.link}>Contact</Link>
-        {/* <a href="#" style={styles.link}>Services</a> */}
-        {/* <a href="#" style={styles.link}>Contact</a> */}
+      {/* LEFT (Mobile Menu + Logo) */}
+      <div className="nav-left">
+        <HiOutlineMenu className="menu-icon" />
+
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
       </div>
-      <button style={styles.button}>Login</button>
-    </div>
-    <HeroSection/>
-    </>
+
+      {/* CENTER MENU */}
+      <ul className="nav-links">
+        <li><Link to="/shop">Shop</Link></li>
+        <li><Link to="/category">Categories</Link></li>
+        <li><Link to="/arrivals">New Arrivals</Link></li>
+        <li><Link to="/sale">Sale</Link></li>
+        <li><Link to="/about">About</Link></li>
+      </ul>
+
+      {/* RIGHT ICONS */}
+      <div className="nav-icons">
+        <IoSearchOutline />
+        <MdOutlineWbSunny />
+        <FaRegUser />
+
+        <div className="cart">
+          <IoBagOutline />
+          <span className="badge">3</span>
+        </div>
+      </div>
+
+    </nav>
   )
 }
 

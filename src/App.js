@@ -3,9 +3,9 @@ import Navigation from './routes/Navigation.js'
 
 function App() {
   return (
-    <div>
+    <>
         <Navigation/>
-    </div>
+    </>
   )
 }
 
