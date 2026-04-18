@@ -1,29 +1,25 @@
 import React from 'react'
-import { Swiper,SwiperSlide } from 'swiper/react'
-
-import 'swiper/css';
-import 'swiper/css/pagination'
-
-import '../App.css'
-
-import { Pagination } from 'swiper/modules';
+import '../assets/css/Home.css'
+import Navbar from './Navbar'
+import Button from './Button'
 
 const HeroSection = () => {
   return (
     <>
-      <Swiper
-      pagination={{
-        dynamicBullets:true,
-      }}
-      modules={[Pagination]}
-      className="mySwiper"
-      >
-        <SwiperSlide>
-            <img src="https://static.vecteezy.com/system/resources/previews/004/299/835/non_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>Slider no 2</SwiperSlide>
-        <SwiperSlide>Slider no 3</SwiperSlide>
-      </Swiper>  
+    <Navbar/>
+    <div className='homeCont'>
+      <div className='heroContent'>
+        <div className='hero-bage'>
+          <p>Spring/Summer 2023 Collection</p>
+        </div>
+        <h2>Elevate Your <br/> <span style={{color:'#A21CAF'}}>Everyday Style</span></h2>
+        <p className='para mt-3'>Discover curated collections of premium fashion and lifestyle products. Timeless designs crafted for the modern individual.</p>
+        <div className='flex gap-3 mt-5'>
+        <Button title="Shop Collection" />
+        <Button title="Browse Categories" bg="#565a64c3" hover-Color="white"/>
+        </div>
+      </div>
+    </div>
     </>
   )
 }
