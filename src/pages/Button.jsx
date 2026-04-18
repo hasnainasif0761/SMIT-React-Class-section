@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Button(props) {
+    const [isHomer,setIsHomer] = useState(false);
     let bgColor = props.bg
     const btnCont = {
         width:'190px',
