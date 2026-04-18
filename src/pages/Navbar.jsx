@@ -31,7 +31,7 @@ const Navbar = () => {
         <li><Link to="/sale">Sale</Link></li>
         <li><Link to="/about">About</Link></li>
       </ul>
-
+          <img src={logo} alt="logo" className='CenterLogo' />
       {/* RIGHT ICONS */}
       <div className="nav-icons">
         <IoSearchOutline />

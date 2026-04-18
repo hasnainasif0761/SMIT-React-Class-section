@@ -79,6 +79,10 @@
   font-size: 24px;
   cursor: pointer;
 }
+.CenterLogo
+{
+  display: none;
+}
 
 /* 🔥 RESPONSIVE */
 @media (max-width: 768px) {
@@ -97,5 +101,16 @@
 
   .logo span {
     font-size: 20px;
+  }
+  .logo
+  {
+    display: none;
+  }
+  .CenterLogo
+  {
+    display: block;
+    width: 100px;
+    position: absolute;
+    left: 30%;
   }
 }
