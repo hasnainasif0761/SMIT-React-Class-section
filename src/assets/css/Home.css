@@ -46,6 +46,12 @@
     font-size: 21px;
     color: white;
 }
+.HeroClientReview
+{
+    width: 92%;
+    height: 100px;
+    border:1px solid red;
+}
 
 @media (max-width:768px) {
     .heroContent

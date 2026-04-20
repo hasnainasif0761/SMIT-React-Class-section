@@ -17,7 +17,9 @@ const HeroSection = () => {
         <Button title="Browse Categories" bg="#565a64c3" hoverBg="#565a64fb"/>
         </div>
     </div>
-    <h1>Hello</h1>
+    <div className="HeroClientReview">
+
+    </div>
     </div>
     </>
   )
