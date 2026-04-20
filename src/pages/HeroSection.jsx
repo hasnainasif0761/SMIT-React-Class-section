@@ -4,6 +4,8 @@ import Button from './Button'
 import { FaStar } from "react-icons/fa";
 import { FiGift } from "react-icons/fi";
 import { Check } from 'lucide-react' ;
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
 
 
 const HeroSection = () => {
@@ -62,6 +64,10 @@ const HeroSection = () => {
           </div>
       </div>
     </div>
+    </div>
+    <div className='w-[90%] h-[80px]  flex flex-col items-center'>
+      <p className='text-center text-gray-400 uppercase mt-3'>Scroll</p>
+        <MdKeyboardDoubleArrowDown  className='text-white text-xl animted'/>
     </div>
     </div>
     </>

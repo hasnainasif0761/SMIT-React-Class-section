@@ -53,7 +53,19 @@
     height: 200px;
     display: flex;
 }
-
+.animted
+{
+    font-size: 21px;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+}
 @media (max-width:768px) {
     .heroContent
     {
@@ -61,8 +73,9 @@
     }
     .homeCont
     {
-        height: 90vh;
+        height: 650px;
         padding-left: 20px;
+        margin-top: 50px;
     }   
     .heroContent .para
     {
