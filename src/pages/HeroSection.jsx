@@ -1,14 +1,12 @@
 import React from 'react'
 import '../assets/css/Home.css'
-import Navbar from './Navbar'
 import Button from './Button'
 
 const HeroSection = () => {
   return (
     <>
-    <Navbar/>
-    <div className='homeCont'>
-      <div className='heroContent'>
+    <div className='homeCont' style={{border:'1px solid red',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'start'}}>
+      <div className='heroContent' style={{border:'1px solid red'}}>
         <div className='hero-bage'>
           <p>Spring/Summer 2023 Collection</p>
         </div>
@@ -18,7 +16,8 @@ const HeroSection = () => {
         <Button title="Shop Collection" />
         <Button title="Browse Categories" bg="#565a64c3" hoverBg="#565a64fb"/>
         </div>
-      </div>
+    </div>
+    <h1>Hello</h1>
     </div>
     </>
   )

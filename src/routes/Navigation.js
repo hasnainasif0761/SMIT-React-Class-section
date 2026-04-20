@@ -9,10 +9,11 @@ import HeroSection from '../pages/HeroSection'
 const Navigation = () => {
   return (
     <BrowserRouter>
+    <Navbar/>
         <Routes>
-            <Route path='/' element={<Navbar/>}/>
+            <Route path='/' element={<HeroSection/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/shop' element={<HeroSection/>}/>
+            <Route path='/shop' element={<About/>}/>
             <Route path='/contact' element={<Contact/>}/>
         </Routes>
     </BrowserRouter>

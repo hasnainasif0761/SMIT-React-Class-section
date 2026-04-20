@@ -12,6 +12,7 @@ import '../assets/css/Navbar.css'
 
 const Navbar = () => {
   return (
+    <>
     <nav className="navbar">
 
       {/* LEFT (Mobile Menu + Logo) */}
@@ -45,6 +46,7 @@ const Navbar = () => {
       </div>
 
     </nav>
+    </>
   )
 }
 
