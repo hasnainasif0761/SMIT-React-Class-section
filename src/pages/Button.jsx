@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaArrowRight } from "react-icons/fa6";
 
 function Button(props) {
     const [isHover,setIsHover] = useState(false);
@@ -7,9 +8,9 @@ function Button(props) {
         background: isHover 
                     ?(props.hoverBg || '#7E22CE')
                     :(props.bg || '#A21CAF'),  
-        padding:'10px 15px',
+        padding:'20px 17px',
         borderRadius:'5px',
-        fontSize:'18px',
+        fontSize:'16px',
         fontWeight:'600',
         color:'white',
         cursor:'pointer',
@@ -21,9 +22,9 @@ function Button(props) {
     style={btnCont}
     onMouseEnter={()=>setIsHover(true)}
     onMouseLeave={()=>setIsHover(false)}
-    className='md:max-w-[190px] w-[97%]'
+    className='md:max-w-[190px] w-[97%] group'
     >
-        {props.title}
+        {props.title} {props.icon && <FaArrowRight className='inline-block group-hover:ml-2 transition-all duration-300' />}
     </button>
     </>
   )
