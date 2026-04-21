@@ -5,7 +5,6 @@
     background-image: linear-gradient(to left, #0f131467,#160222c2), url('../image/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 10px;
     display: flex;
     justify-content: start;
     align-items: center;

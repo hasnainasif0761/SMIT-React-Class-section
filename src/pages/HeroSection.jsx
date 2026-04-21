@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { FiGift } from "react-icons/fi";
 import { Check } from 'lucide-react' ;
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import Service from './Service';
 
 
 
@@ -70,6 +71,7 @@ const HeroSection = () => {
         <MdKeyboardDoubleArrowDown  className='text-white text-xl animted'/>
     </div>
     </div>
+    <Service/>
     </>
   )
 }

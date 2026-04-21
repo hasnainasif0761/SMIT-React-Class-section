@@ -55,7 +55,9 @@ const Navbar = () => {
         {/* <HiOutlineMenu className="menu-icon" /> */}
         {openHam ? <HiOutlineMenu className='menu-icon' onClick={toggleHam} /> : <RxCross2 className='menu-icon' onClick={toggleHam} />}
         <div className="logo">
+          <Link to={'/'}>
           <img src={logo} alt="logo" />
+          </Link>
         </div>
       </div>
 
