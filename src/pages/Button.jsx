@@ -5,10 +5,11 @@ function Button(props) {
     const [isHover,setIsHover] = useState(false);
     let bgColor = props.bg
     const btnCont = {
+      width:'200px',
+      height:'50px',
         background: isHover 
                     ?(props.hoverBg || '#7E22CE')
                     :(props.bg || '#A21CAF'),  
-        padding:'20px 17px',
         borderRadius:'5px',
         fontSize:'16px',
         fontWeight:'600',
