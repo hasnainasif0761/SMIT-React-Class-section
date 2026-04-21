@@ -6,6 +6,7 @@ import { FiGift } from "react-icons/fi";
 import { Check } from 'lucide-react' ;
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Service from './Service';
+import ProductSection from './ProductSection';
 
 
 
@@ -72,6 +73,7 @@ const HeroSection = () => {
     </div>
     </div>
     <Service/>
+    <ProductSection/>
     </>
   )
 }

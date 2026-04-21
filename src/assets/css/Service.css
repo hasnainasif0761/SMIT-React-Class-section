@@ -2,6 +2,12 @@
 {
     width: 100%;
     height: 210px;
-    border: 1px solid red;
     background: #030712;
+}
+@media (max-width:768px) {
+    .serviceCont
+    {
+        height: auto;
+        padding: 10px 0px;
+    }
 }
