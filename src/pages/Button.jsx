@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
-import { FaArrowRight } from "react-icons/fa6";
 
-function Button(props) {
+// React Icon Library Import Link
+
+
+function Button({bg,hoverBg,title,Icon,className,iconClass}) {
     const [isHover,setIsHover] = useState(false);
-    let bgColor = props.bg
+    let bgColor = bg
     const btnCont = {
-      width:'340px',
       height:'50px',
         background: isHover 
-                    ?(props.hoverBg || '#7E22CE')
-                    :(props.bg || '#A21CAF'),  
+                    ?(hoverBg || '#7E22CE')
+                    :(bg || '#A21CAF'),  
         borderRadius:'5px',
-        fontSize:'16px',
-        fontWeight:'600',
-        color:'white',
         cursor:'pointer',
         transition:'0.3s'
     }
@@ -23,9 +21,9 @@ function Button(props) {
     style={btnCont}
     onMouseEnter={()=>setIsHover(true)}
     onMouseLeave={()=>setIsHover(false)}
-    className='md:max-w-[190px] w-[90%] group'
+    className={`flex items-center justify-center rounded-md font-semibold text-[14px] border border-gray-200 shadow-sm group ${className}`} 
     >
-        {props.title} {props.icon && <FaArrowRight className='inline-block group-hover:ml-2 transition-all duration-300' />}
+        {title && <span className='px-2'>{title}</span>} {Icon && <Icon className={`inline-block  transition-all duration-300 ${iconClass}`} />}
     </button>
     </>
   )

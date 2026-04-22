@@ -5,12 +5,14 @@ import About from '../pages/About'
 import Services from '../pages/Services'
 import Contact from '../pages/Contact'
 import HeroSection from '../pages/HeroSection'
+import PageNotFound from '../pages/PageNotFound'
 
 const Navigation = () => {
   return (
     <BrowserRouter>
     <Navbar/>
         <Routes>
+            <Route path='*' element={<PageNotFound/>} />
             <Route path='/' element={<HeroSection/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/shop' element={<About/>}/>

@@ -18,12 +18,6 @@ function ProductSection() {
             </div>
             <div className='w-full h-auto border py-3 px-1 flex flex-wrap justify-center gap-3'>
                 <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
             </div>
         </div>
     </div>
