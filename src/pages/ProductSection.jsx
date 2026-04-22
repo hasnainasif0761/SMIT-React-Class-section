@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assets/css/Home.css'
 import Button from './Button'
+import Card from './Card'
 
 function ProductSection() {
   return (
@@ -14,6 +15,15 @@ function ProductSection() {
                 <div>
                     <Button title="View All Products" />
                 </div>  
+            </div>
+            <div className='w-full h-auto border py-3 px-1 flex flex-wrap justify-center gap-3'>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
             </div>
         </div>
     </div>

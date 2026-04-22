@@ -5,7 +5,7 @@ function Button(props) {
     const [isHover,setIsHover] = useState(false);
     let bgColor = props.bg
     const btnCont = {
-      width:'200px',
+      width:'340px',
       height:'50px',
         background: isHover 
                     ?(props.hoverBg || '#7E22CE')
@@ -23,7 +23,7 @@ function Button(props) {
     style={btnCont}
     onMouseEnter={()=>setIsHover(true)}
     onMouseLeave={()=>setIsHover(false)}
-    className='md:max-w-[190px] w-[97%] group'
+    className='md:max-w-[190px] w-[90%] group'
     >
         {props.title} {props.icon && <FaArrowRight className='inline-block group-hover:ml-2 transition-all duration-300' />}
     </button>
