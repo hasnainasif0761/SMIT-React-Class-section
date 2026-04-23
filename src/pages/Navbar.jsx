@@ -10,6 +10,8 @@ import { FaRegUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import { FaMoon } from "react-icons/fa6";
+
 
 
 import '../assets/css/Navbar.css'
@@ -19,6 +21,7 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(true)
   useEffect(()=>{
     const controlNavbar = () =>{
       const currentScrollY = window.scrollY;
@@ -27,12 +30,6 @@ const Navbar = () => {
         setIsVisible(false)
       }else{
         setIsVisible(true)
-      }
-
-      if(currentScrollY < 50){
-        setIsAtTop(true)
-      }else{
-        setIsAtTop(false)
       }
       setLastScrollY(currentScrollY);
     }
@@ -45,6 +42,22 @@ const Navbar = () => {
   const toggleHam = () =>{
     setOpenHam(!openHam)
   }
+
+  const toggleTheme = () =>{
+    setIsDarkMode(!isDarkMode)
+    document.documentElement.classList.toggle('dark');
+    alert('Your are Toogle this Theme')
+  }
+
+  const handleSearch = () =>{
+    alert('Your Search this Product')
+  }
+
+  const handleUser = () =>{
+    alert('Redirection...... this Profile')
+  }
+
+
 
   return (
     <>
@@ -72,9 +85,17 @@ const Navbar = () => {
           <img src={logo} alt="logo" className='CenterLogo md:hidden' />
       {/* RIGHT ICONS */}
       <div className="nav-icons">
+        {/* <MdOutlineWbSunny /> */}
+        <button onClick={handleSearch}>
         <IoSearchOutline />
-        <MdOutlineWbSunny />
+        </button>
+        <button onClick={toggleTheme}>
+        {isDarkMode ? <FaMoon/> : <MdOutlineWbSunny /> }
+        </button>
+        <button onClick={handleUser}>
         <FaRegUser />
+        </button>
+        {/* <MdOutlineWbSunny /> */}
 
         <div className="cart">
           <IoBagOutline />

@@ -7,7 +7,7 @@ import { Check } from 'lucide-react' ;
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Service from './Service';
 import ProductSection from './ProductSection';
-
+import { FaArrowRight } from "react-icons/fa6";
 
 
 const HeroSection = () => {
@@ -21,8 +21,8 @@ const HeroSection = () => {
         <h2>Elevate Your <br/> <span style={{color:'#A21CAF'}}>Everyday Style</span></h2>
         <p className='para mt-3'>Discover curated collections of premium fashion and lifestyle products. Timeless designs crafted for the modern individual.</p>
         <div className='flex flex-col md:flex-row gap-3 mt-5'>
-        <Button title="Shop Collection" icon="<FaArrowRight />" />
-        <Button title="Browse Categories" bg="#565a64c3" hoverBg="#565a64fb"/>
+        <Button title="Shop Collection" Icon={FaArrowRight} iconClass='group-hover:ml-2' className='md:w-[190px] w-[97%] text-white text-[16px] border-none' />
+        <Button title="Browse Categories" bg="#565a64c3" hoverBg="#565a64fb" className='md:w-[190px] w-[97%] text-white text-[16px] border-none'/>
         </div>
     </div>
     <div className="HeroClientReview">

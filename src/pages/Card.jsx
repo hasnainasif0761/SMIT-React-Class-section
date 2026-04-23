@@ -1,11 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from './Button'
 
-import { FaRegHeart } from "react-icons/fa";
+// Importing Icons From React Icon Libarary
+import { FaHeart } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
+import { BsHandbag } from "react-icons/bs";
+import toast from 'react-hot-toast';
+
 
 
 function Card() {
+  const [isLike, setIsLike] = useState(false)
+  const message = () => toast.success('Product Added To Cart');
+    const handleLike = () => {
+    setIsLike(!isLike);
+    const msg = !isLike ? 'Added To Favorites!' : 'Remove From Favourites!';
+    const icon = !isLike ? '❤️' : '💔'
+      toast(msg, {
+      icon: icon,
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      }
+    });
+    }
   return (
     <div className='md:w-[285px] w-full h-auto  relative group px-2'>
         <div className='w-full h-[290px]  relative  overflow-hidden cursor-pointer rounded-[13px]'>            
@@ -15,16 +34,18 @@ function Card() {
               alt="product"
             />
             <div className='absolute bottom-2 left-0 px-2 w-full z-10 flex items-center justify-center gap-1'>
-            <Button 
+            <Button Lefticon={BsHandbag}
               className='flex-1 text-black hover:text-white opacity-0 group-hover:opacity-100 uppercase h-[50px] border-none' 
               title='Add to Cart'
               bg='white'
+              onClick={message}
             />
             <Button 
-              className='w-[50px] text-black hover:text-white opacity-0 group-hover:opacity-100 border-none' 
+              className='w-[50px] bg-white text-black hover:text-white opacity-0 group-hover:opacity-100 border-none' 
               bg='white'
-              Icon={FaRegHeart}
-              iconClass='text-xl '
+              Icon={FaHeart}
+              iconClass={`text-xl  ${isLike ? 'text-red-500' : 'text-black'} `}
+              onClick={handleLike}
             />
             </div>
         </div>
