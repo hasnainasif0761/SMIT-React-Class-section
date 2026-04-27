@@ -6,6 +6,9 @@ import Services from '../pages/Services'
 import Contact from '../pages/Contact'
 import HeroSection from '../pages/HeroSection'
 import PageNotFound from '../pages/PageNotFound'
+import ProductDetail from '../pages/ProductDetail'
+import ProductSection from '../pages/ProductSection'
+import ProductLayout from '../pages/ProductLayout'
 
 const Navigation = () => {
   return (
@@ -17,6 +20,10 @@ const Navigation = () => {
             <Route path='/about' element={<About/>}/>
             <Route path='/shop' element={<About/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/product' element={<ProductLayout/>}>
+              <Route index element={<ProductSection/>} />
+              <Route path='productdetail/:id' element={<ProductDetail/>} />
+            </Route>
         </Routes>
     </BrowserRouter>
   )

@@ -3,11 +3,16 @@ import '../assets/css/Home.css'
 import Button from './Button'
 import Card from './Card'
 import { FaArrowRight } from "react-icons/fa6";
+import data from '../utils/productsCard';
+import {Link} from 'react-router-dom'
+import Breadcrumbs from './BroadCrumbs';
+
 
 
 function ProductSection() {
   return (
     <div className='w-full h-auto py-3 bg-[#030712]'>
+        <Breadcrumbs/>
         <div className='max-w-[1200px] w-full  h-auto py-3 mx-auto'>
             <div className='w-full  h-auto py-2 px-2  flex md:justify-between md:flex-row md:text-start text-center  flex-col justify-center items-center'>
                 <div className='leading-[33px] ml-3'>
@@ -19,14 +24,13 @@ function ProductSection() {
                 </div>  
             </div>
             <div className='w-full h-auto  py-3 px-1 flex flex-wrap justify-center gap-3'>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    data.map((product,idx)=>{
+                        return(
+                        <Card id={product.id} title={product.title} price={product.price} delPrice={product.delPrice} category={product.category} image={product.image} color={product.color} />
+                    )
+                    })
+                }
             </div>
         </div>
     </div>
