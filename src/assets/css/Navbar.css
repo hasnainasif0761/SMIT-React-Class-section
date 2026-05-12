@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #020817;
+  /* background: #020817; */
   color: white;
   padding: 15px 40px;
   border-bottom: 1px solid #1e293b;
@@ -37,7 +37,7 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #cbd5f5;
+  /* color: #cbd5f5; */
   font-weight: 500;
   transition: 0.3s;
 }

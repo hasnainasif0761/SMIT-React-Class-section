@@ -22,8 +22,8 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
-  const [isDarkMode, setIsDarkMode] = useState(true)
-  const {theme} = useContext(ThemeContext)
+  const [mode, setMode] = useState(true)
+  const {theme,setTheme} = useContext(ThemeContext)
 
 
   console.log(theme)
@@ -50,9 +50,14 @@ const Navbar = () => {
   }
 
   const toggleTheme = () =>{
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle('dark');
-    alert('Your are Toogle this Theme')
+    if(theme === 'dark'){
+      setMode(true)
+      setTheme('light')
+    }
+    if(theme === 'light'){
+      setMode(false)
+      setTheme('dark')
+    }
   }
 
   const handleSearch = () =>{
@@ -67,7 +72,7 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className={`navbar fixed w-full top-0 left-0 z-50 ${isVisible ? 'translate-y-0':'translate-y-[-100%]'} transition-transform duration-300 ease-in-out`}>
+    <nav className={`navbar fixed w-full top-0 left-0 z-50 ${mode ? 'bg-[#020817]' : 'bg-white'} ${isVisible ? 'translate-y-0':'translate-y-[-100%]'} transition-transform duration-300 ease-in-out`}>
 
       {/* LEFT (Mobile Menu + Logo) */}
       <div className="nav-left">
@@ -82,29 +87,29 @@ const Navbar = () => {
 
       {/* CENTER MENU */}
       <ul className={`nav-links ${openHam ? 'left-[-100%]': 'left-[-0%]'}`}>
-        <li><Link to="/shop">Shop</Link></li>
-        <li><Link to="/category">Categories</Link></li>
-        <li><Link to="/arrivals">New Arrivals</Link></li>
-        <li><Link to="/sale">Sale</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/shop">Shop</Link></li>
+        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/category">Categories</Link></li>
+        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/arrivals">New Arrivals</Link></li>
+        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/sale">Sale</Link></li>
+        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/about">About</Link></li>
       </ul>
           <img src={logo} alt="logo" className='CenterLogo md:hidden' />
       {/* RIGHT ICONS */}
       <div className="nav-icons">
         {/* <MdOutlineWbSunny /> */}
         <button onClick={handleSearch}>
-        <IoSearchOutline />
+        <IoSearchOutline className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
         </button>
         <button onClick={toggleTheme}>
-        {isDarkMode ? <FaMoon/> : <MdOutlineWbSunny /> }
+        {mode ? <FaMoon className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}/> : <MdOutlineWbSunny className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} /> }
         </button>
         <button onClick={handleUser}>
-        <FaRegUser />
+        <FaRegUser className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
         </button>
         {/* <MdOutlineWbSunny /> */}
 
         <div className="cart">
-          <IoBagOutline />
+          <IoBagOutline className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
           <span className="badge">3</span>
         </div>
       </div>
