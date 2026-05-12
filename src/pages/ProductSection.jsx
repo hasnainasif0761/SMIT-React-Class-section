@@ -12,7 +12,7 @@ import Breadcrumbs from './BroadCrumbs';
 function ProductSection() {
   return (
     <div className='w-full h-auto py-3 bg-[#030712]'>
-        <Breadcrumbs/>
+        {/* <Breadcrumbs/> */}
         <div className='max-w-[1200px] w-full  h-auto py-3 mx-auto'>
             <div className='w-full  h-auto py-2 px-2  flex md:justify-between md:flex-row md:text-start text-center  flex-col justify-center items-center'>
                 <div className='leading-[33px] ml-3'>

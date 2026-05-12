@@ -9,9 +9,11 @@ import PageNotFound from '../pages/PageNotFound'
 import ProductDetail from '../pages/ProductDetail'
 import ProductSection from '../pages/ProductSection'
 import ProductLayout from '../pages/ProductLayout'
+import ThemeProvider from '../Context/ThemeProvider'
 
 const Navigation = () => {
   return (
+    <ThemeProvider>
     <BrowserRouter>
     <Navbar/>
         <Routes>
@@ -26,6 +28,7 @@ const Navigation = () => {
             </Route>
         </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

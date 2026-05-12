@@ -88,10 +88,14 @@ function ProductDetail() {
                         )
                       })}
                     </div>
-                    <div className='border p-2'>
-                      <div className="border py-2"></div>
-                      <div className="border py-2"></div>
-                      <div className="border py-2"></div>
+                    <div className='border p-2 flex'>
+                      <div className="border p-2 w-[300px]">
+                        <div></div>
+                        <p>1</p>
+                        <div></div>
+                      </div>
+                      <div className="border p-2 w-[400px]"></div>
+                      <div className="border p-2 w-[200px]"></div>
                     </div>
                 </div>
               </div>

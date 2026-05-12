@@ -1,5 +1,5 @@
 // import React from 'react'
-import React, { useEffect,useState } from 'react';
+import React, { useContext, useEffect,useState } from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../assets/image/logo-light.svg'
 
@@ -12,9 +12,10 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import { FaMoon } from "react-icons/fa6";
 
-
-
 import '../assets/css/Navbar.css'
+import { ThemeContext } from '../Context/ThemeProvider';
+
+
 
 const Navbar = () => {
   const [openHam, setOpenHam] = useState(true)
@@ -22,6 +23,10 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const {theme} = useContext(ThemeContext)
+
+
+  console.log(theme)
   useEffect(()=>{
     const controlNavbar = () =>{
       const currentScrollY = window.scrollY;
@@ -38,6 +43,7 @@ const Navbar = () => {
       window.removeEventListener('scroll',controlNavbar);
     }
   },[lastScrollY])
+
 
   const toggleHam = () =>{
     setOpenHam(!openHam)
