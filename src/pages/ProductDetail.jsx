@@ -6,7 +6,9 @@ import data from '../utils/productsCard'
 // Import Icon React Icon library
 // import { IoIosArrowForward } from "react-icons/io";
 import BroadCrumbs from './BroadCrumbs'
+import { BsHandbag } from "react-icons/bs";
 import { FaStar } from "react-icons/fa6";
+import Button from './Button';
 // import { FaRegStar } from "react-icons/fa6";
 
 
@@ -30,7 +32,7 @@ function ProductDetail() {
                   <img src={product.image} alt={product.title} className='w-full h-full object-cover rounded-xl' />
                 </div>
               </div>
-              <div className='md:w-[50%] w-full h-[450px] border'>
+              <div className='md:w-[50%] w-full h-auto border'>
                 <div className="border py-2">
                   <h1 className='text-white ml-3 font-bold text-[30px] truncate max-w-[70%]'>{product.title}</h1>
                 </div>
@@ -94,7 +96,9 @@ function ProductDetail() {
                         <p>1</p>
                         <div></div>
                       </div>
-                      <div className="border p-2 w-[400px]"></div>
+                      <div className="border p-2 w-[400px]">
+                        <Button title='Add to Cart' className='w-[98%] text-white' Lefticon={BsHandbag} />
+                      </div>
                       <div className="border p-2 w-[200px]"></div>
                     </div>
                 </div>
