@@ -9,6 +9,9 @@ import BroadCrumbs from './BroadCrumbs'
 import { BsHandbag } from "react-icons/bs";
 import { FaStar } from "react-icons/fa6";
 import Button from './Button';
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
+
 // import { FaRegStar } from "react-icons/fa6";
 
 
@@ -91,10 +94,14 @@ function ProductDetail() {
                       })}
                     </div>
                     <div className='border p-2 flex'>
-                      <div className="border p-2 w-[300px]">
-                        <div></div>
-                        <p>1</p>
-                        <div></div>
+                      <div className="border p-2 w-[300px] flex items-center justify-center">
+                        <div className="w-[50px] h-[40px] border flex items-center justify-center">
+                          <FaPlus className="text-white" />
+                        </div>
+                        <p className="w-[60px] h-[40px] border">1</p>
+                        <div className="w-[50px] h-[40px] border flex items-center justify-center">
+                          <FaMinus className="text-white" />
+                        </div>
                       </div>
                       <div className="border p-2 w-[400px]">
                         <Button title='Add to Cart' className='w-[98%] text-white' Lefticon={BsHandbag} />

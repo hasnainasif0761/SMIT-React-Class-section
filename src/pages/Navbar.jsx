@@ -2,6 +2,7 @@
 import React, { useContext, useEffect,useState } from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../assets/image/logo-light.svg'
+import BlackLogo from '../assets/image/black-logo.png'
 
 // Importing Icons from React Icon Library
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -80,7 +81,7 @@ const Navbar = () => {
         {openHam ? <HiOutlineMenu className='menu-icon' onClick={toggleHam} /> : <RxCross2 className='menu-icon' onClick={toggleHam} />}
         <div className="logo">
           <Link to={'/'}>
-          <img src={logo} alt="logo" />
+          <img src={mode ? logo : BlackLogo} alt="logo" />
           </Link>
         </div>
       </div>
