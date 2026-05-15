@@ -16,7 +16,7 @@ function ThemeProvider({ children }) {
     }
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme,ChangeTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme,ChangeTheme}}>
             {children}
         </ThemeContext.Provider>
     )

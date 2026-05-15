@@ -23,8 +23,7 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
-  const [mode, setMode] = useState(true)
-  const {theme,setTheme} = useContext(ThemeContext)
+  const {theme,setTheme,ChangeTheme} = useContext(ThemeContext)
 
 
   console.log(theme)
@@ -50,17 +49,6 @@ const Navbar = () => {
     setOpenHam(!openHam)
   }
 
-  const toggleTheme = () =>{
-    if(theme === 'dark'){
-      setMode(true)
-      setTheme('light')
-    }
-    if(theme === 'light'){
-      setMode(false)
-      setTheme('dark')
-    }
-  }
-
   const handleSearch = () =>{
     alert('Your Search this Product')
   }
@@ -73,7 +61,7 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className={`navbar fixed w-full top-0 left-0 z-50 ${mode ? 'bg-[#020817]' : 'bg-white'} ${isVisible ? 'translate-y-0':'translate-y-[-100%]'} transition-transform duration-300 ease-in-out`}>
+    <nav className={`navbar fixed w-full top-0 left-0 z-50 ${theme === 'dark' ? 'bg-[#020817]' : 'bg-white'} ${isVisible ? 'translate-y-0':'translate-y-[-100%]'} transition-transform duration-300 ease-in-out`}>
 
       {/* LEFT (Mobile Menu + Logo) */}
       <div className="nav-left">
@@ -81,36 +69,36 @@ const Navbar = () => {
         {openHam ? <HiOutlineMenu className='menu-icon' onClick={toggleHam} /> : <RxCross2 className='menu-icon' onClick={toggleHam} />}
         <div className="logo">
           <Link to={'/'}>
-          <img src={mode ? logo : BlackLogo} alt="logo" />
+          <img src={theme === 'dark' ? logo : BlackLogo} alt="logo" />
           </Link>
         </div>
       </div>
 
       {/* CENTER MENU */}
       <ul className={`nav-links ${openHam ? 'left-[-100%]': 'left-[-0%]'}`}>
-        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/shop">Shop</Link></li>
-        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/category">Categories</Link></li>
-        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/arrivals">New Arrivals</Link></li>
-        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/sale">Sale</Link></li>
-        <li className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/about">About</Link></li>
+        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/shop">Shop</Link></li>
+        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/category">Categories</Link></li>
+        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/arrivals">New Arrivals</Link></li>
+        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/sale">Sale</Link></li>
+        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/about">About</Link></li>
       </ul>
           <img src={logo} alt="logo" className='CenterLogo md:hidden' />
       {/* RIGHT ICONS */}
       <div className="nav-icons">
         {/* <MdOutlineWbSunny /> */}
         <button onClick={handleSearch}>
-        <IoSearchOutline className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
+        <IoSearchOutline className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`} />
         </button>
-        <button onClick={toggleTheme}>
-        {mode ? <FaMoon className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`}/> : <MdOutlineWbSunny className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} /> }
+        <button onClick={ChangeTheme}>
+        {theme === 'dark'  ? <FaMoon className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}/> : <MdOutlineWbSunny className={`${theme === 'dark'  ? 'text-[#cbd5f5]' : 'text-black'}`} /> }
         </button>
         <button onClick={handleUser}>
-        <FaRegUser className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
+        <FaRegUser className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`} />
         </button>
         {/* <MdOutlineWbSunny /> */}
 
         <div className="cart">
-          <IoBagOutline className={`${mode ? 'text-[#cbd5f5]' : 'text-black'}`} />
+          <IoBagOutline className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`} />
           <span className="badge">3</span>
         </div>
       </div>

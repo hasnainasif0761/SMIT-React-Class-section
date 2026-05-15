@@ -16,7 +16,7 @@ function ProductSection() {
         <div className='max-w-[1200px] w-full  h-auto py-3 mx-auto'>
             <div className='w-full  h-auto py-2 px-2  flex md:justify-between md:flex-row md:text-start text-center  flex-col justify-center items-center'>
                 <div className='leading-[33px] ml-3'>
-                <h1 className='text-white text-[35px] font-bold'>Featured Products</h1>
+                <h1 className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'} text-[35px] font-bold`}>Featured Products</h1>
                 <p className='text-gray-300 text-[18px]'>Discover our handpicked selection of trending items</p>
                 </div>
                 <div className='w-full md:w-auto flex justify-center mr-3'>
