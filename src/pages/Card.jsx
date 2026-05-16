@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Button from './Button'
+
 
 // Importing Icons From React Icon Libarary
 import { FaHeart } from "react-icons/fa6";
@@ -8,12 +9,15 @@ import { BsHandbag } from "react-icons/bs";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
+// Import Theme Context from ThemeContect.jsx file
+import { ThemeContext } from '../Context/ThemeProvider';
 
 
 function Card({id,title,category,price,delPrice,color,image}) {
   // Hook React js
   const [isLike, setIsLike] = useState(false)
   const navigate = useNavigate();
+  const {theme} = useContext(ThemeContext)
 
   const message = () => toast.success('Product Added To Cart');
     const handleLike = () => {
@@ -63,10 +67,10 @@ function Card({id,title,category,price,delPrice,color,image}) {
               <p className='flex items-center gap-2'><FaStar className='text-yellow-400' />4.8</p>
             </div>
             <div className='p-1'>
-              <h3 className='text-white font-semibold truncate max-w-[220px] hover:text-[#A21CAF] cursor-pointer transition-all duration-300'>{title}</h3>
+              <h3 className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-semibold truncate max-w-[220px] hover:text-[#A21CAF] cursor-pointer transition-all duration-300`}>{title}</h3>
             </div>
             <div className='p-1'>
-              <p className='text-white font-semibold'>{price} <del className='text-gray-500'>{delPrice}</del></p>
+              <p className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-semibold`}>{price} <del className='text-gray-500'>{delPrice}</del></p>
             </div>
             <div className='p-1 h-auto flex gap-1'>
               {color && color.map((item, index) => (

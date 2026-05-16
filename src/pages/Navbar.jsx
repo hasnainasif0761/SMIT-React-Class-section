@@ -22,8 +22,7 @@ const Navbar = () => {
   const [openHam, setOpenHam] = useState(true)
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isAtTop, setIsAtTop] = useState(true);
-  const {theme,setTheme,ChangeTheme} = useContext(ThemeContext)
+  const {theme,ChangeTheme} = useContext(ThemeContext)
 
 
   console.log(theme)
@@ -66,7 +65,7 @@ const Navbar = () => {
       {/* LEFT (Mobile Menu + Logo) */}
       <div className="nav-left">
         {/* <HiOutlineMenu className="menu-icon" /> */}
-        {openHam ? <HiOutlineMenu className='menu-icon' onClick={toggleHam} /> : <RxCross2 className='menu-icon' onClick={toggleHam} />}
+        {openHam ? <HiOutlineMenu className={`menu-icon ${theme === 'dark' ? 'text-white' : 'text-black'}`} onClick={toggleHam} /> : <RxCross2 className={`menu-icon ${theme === 'dark' ? 'text-white' : 'text-black'}`} onClick={toggleHam} />}
         <div className="logo">
           <Link to={'/'}>
           <img src={theme === 'dark' ? logo : BlackLogo} alt="logo" />
@@ -76,13 +75,13 @@ const Navbar = () => {
 
       {/* CENTER MENU */}
       <ul className={`nav-links ${openHam ? 'left-[-100%]': 'left-[-0%]'}`}>
-        <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/shop">Shop</Link></li>
+        <li className={`${theme === 'dark' ? 'md:text-[#cbd5f5]' : 'md:text-black'}`}><Link to="/shop">Shop</Link></li>
         <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/category">Categories</Link></li>
         <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/arrivals">New Arrivals</Link></li>
         <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/sale">Sale</Link></li>
         <li className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}><Link to="/about">About</Link></li>
       </ul>
-          <img src={logo} alt="logo" className='CenterLogo md:hidden' />
+          <img src={theme === 'dark' ? logo : BlackLogo} alt="logo" className='CenterLogo md:hidden' />
       {/* RIGHT ICONS */}
       <div className="nav-icons">
         {/* <MdOutlineWbSunny /> */}
