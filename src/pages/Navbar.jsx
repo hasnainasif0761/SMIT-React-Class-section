@@ -15,6 +15,7 @@ import { FaMoon } from "react-icons/fa6";
 
 import '../assets/css/Navbar.css'
 import { ThemeContext } from '../Context/ThemeProvider';
+import { SignedIn, SignedOut, SignIn, SignInButton, UserButton } from '@clerk/clerk-react';
 
 
 
@@ -53,7 +54,7 @@ const Navbar = () => {
   }
 
   const handleUser = () =>{
-    alert('Redirection...... this Profile')
+    
   }
 
 
@@ -91,9 +92,17 @@ const Navbar = () => {
         <button onClick={ChangeTheme}>
         {theme === 'dark'  ? <FaMoon className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`}/> : <MdOutlineWbSunny className={`${theme === 'dark'  ? 'text-[#cbd5f5]' : 'text-black'}`} /> }
         </button>
+
+        <SignedOut>
+        <SignInButton mode='modal' afterSignInUrl="./Dashboard.jsx">
         <button onClick={handleUser}>
         <FaRegUser className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`} />
         </button>
+        </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton afterSignOutUrl='/' />
+        </SignedIn>
         {/* <MdOutlineWbSunny /> */}
 
         <div className="cart">
@@ -101,7 +110,6 @@ const Navbar = () => {
           <span className="badge">{cartItem.length}</span>
         </div>
       </div>
-
     </nav>
     </>
   )
