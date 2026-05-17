@@ -17,10 +17,10 @@ function Card({id,title,category,price,delPrice,color,image}) {
   // Hook React js
   const [isLike, setIsLike] = useState(false)
   const navigate = useNavigate();
-  const {theme} = useContext(ThemeContext)
+  const {theme,handleLike} = useContext(ThemeContext)
 
   const message = () => toast.success('Product Added To Cart');
-    const handleLike = () => {
+    const handleLiked = () => {
     setIsLike(!isLike);
     const msg = !isLike ? 'Added To Favorites!' : 'Remove From Favourites!';
     const icon = !isLike ? '❤️' : '💔'
@@ -50,14 +50,14 @@ function Card({id,title,category,price,delPrice,color,image}) {
               className='flex-1 text-black hover:text-white opacity-0 group-hover:opacity-100 uppercase h-[50px] border-none' 
               title='Add to Cart'
               bg='white'
-              onClick={message}
+              onClick={()=>handleLike(id)}
             />
             <Button 
               className='w-[50px] bg-white text-black hover:text-white opacity-0 group-hover:opacity-100 border-none' 
               bg='white'
               Icon={FaHeart}
               iconClass={`text-xl  ${isLike ? 'text-red-500' : 'text-black'} `}
-              onClick={handleLike}
+              onClick={handleLiked}
             />
             </div>
         </div>

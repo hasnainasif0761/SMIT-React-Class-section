@@ -1,4 +1,4 @@
-import { FaStar } from 'react-icons/fa';
+// import { FaStar } from 'react-icons/fa';
 
 let data = [
     {
@@ -103,7 +103,7 @@ let data = [
         stars: ['FaStar', 'FaStar', 'FaStar'],
         reviews: '450 customer reviews',
         description: 'Compact yet powerful speaker with crystal clear sound. IPX7 waterproof rating makes it perfect for beach parties or poolside listening.',
-        image: 'https://images.unsplash.com/photo-1608156639585-34a0a56ee6c9?w=500&auto=format'
+        image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         id: 'prod_009',
@@ -116,7 +116,7 @@ let data = [
         stars: ['FaStar', 'FaStar', 'FaStar', 'FaStar', 'FaStar'],
         reviews: '310 customer reviews',
         description: 'Eco-friendly, non-slip yoga mat with extra thickness for joint support. Easy to clean and comes with a convenient carrying strap.',
-        image: 'https://images.unsplash.com/photo-1592432676556-26d535f3d48d?w=500&auto=format'
+        image: 'https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/668ffcfa88badf00b12c751f/yoga-mat-blue-420x420.jpg'
     },
     {
         id: 'prod_010',

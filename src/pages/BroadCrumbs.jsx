@@ -1,10 +1,13 @@
 import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { MdChevronRight } from "react-icons/md";
 import data from '../utils/productsCard';
+import { useContext } from 'react';
+import { ThemeContext } from '../Context/ThemeProvider';
 
 const Breadcrumbs = () => {
   const { id } = useParams(); // URL se id pakre ga
   const location = useLocation();
+  const {theme} = useContext(ThemeContext)
   
   // Agar ID hai, to data mein se title nikal lo
   const product = data.find(p => p.id === id);
@@ -27,7 +30,7 @@ const Breadcrumbs = () => {
       {id && product && (
         <>
           <MdChevronRight className="text-gray-600" />
-          <span className="text-white font-bold truncate max-w-[150px]">
+          <span className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-bold truncate max-w-[150px]`}>
             {product.title}
           </span>
         </>

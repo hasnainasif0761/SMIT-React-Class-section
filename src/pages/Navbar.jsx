@@ -22,7 +22,7 @@ const Navbar = () => {
   const [openHam, setOpenHam] = useState(true)
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const {theme,ChangeTheme} = useContext(ThemeContext)
+  const {theme,ChangeTheme,cartItem} = useContext(ThemeContext)
 
 
   console.log(theme)
@@ -98,7 +98,7 @@ const Navbar = () => {
 
         <div className="cart">
           <IoBagOutline className={`${theme === 'dark' ? 'text-[#cbd5f5]' : 'text-black'}`} />
-          <span className="badge">3</span>
+          <span className="badge">{cartItem.length}</span>
         </div>
       </div>
 
