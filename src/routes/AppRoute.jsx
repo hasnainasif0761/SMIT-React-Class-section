@@ -8,8 +8,14 @@ import ProductLayout from '../pages/ProductLayout';
 import ProductSection from '../pages/ProductSection';
 import ProductDetail from '../pages/ProductDetail';
 import Navbar from '../pages/Navbar';
-import Dashboard, { Overview, Orders, Wishlist, Addresses, ProfileSettings } from '../pages/Dashboard.jsx'
+
 import { SignedOut, useUser, SignedIn, UserProfile, RedirectToSignIn } from '@clerk/clerk-react';
+import Dashboard from '../pages/Dashboard';
+import Overview from '../pages/dashboard/Overview';
+import Orders from '../pages/dashboard/Orders';
+import Wishlist from '../pages/dashboard/Wishlist';
+import Addresses from '../pages/dashboard/Addresses';
+import Settings from '../pages/dashboard/Setting';
 
 function AppRoute() {
   const location = useLocation()
@@ -23,12 +29,17 @@ function AppRoute() {
   },[isSignedIn,location,navigate])
   
 
-  const hideNavbarRoutes = ['/login','/register','/forget-password'];
+    const showNavbar = 
+    location.pathname === '/' ||
+    location.pathname === '/about' ||
+    location.pathname === '/shop' ||
+    location.pathname === '/contact' ||
+    location.pathname.startsWith('/product/productdetail/')
 
-  const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname)
+  
   return (
     <>
-    {!shouldHideNavbar && <Navbar/>}
+    {showNavbar && <Navbar/>}
         <Routes>
             <Route path='*' element={<PageNotFound/>} />
             <Route path='/' element={<HeroSection/>}/>
@@ -49,7 +60,7 @@ function AppRoute() {
           <Route path='orders' element={<Orders />} />
           <Route path='wishlist' element={<Wishlist />} />
           <Route path='addresses' element={<Addresses />} />
-          <Route path='profile' element={<ProfileSettings />} />
+          <Route path='settings' element={<Settings />} />
           </Route>
             <Route path='/product' element={<ProductLayout/>}>
               <Route index element={<ProductSection/>} />
