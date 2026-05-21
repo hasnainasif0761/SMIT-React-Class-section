@@ -8,6 +8,9 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Service from './Service';
 import ProductSection from './ProductSection';
 import { FaArrowRight } from "react-icons/fa6";
+import Category from '../components/Category';
+import NewArrivals from '../components/NewArrivals';
+
 
 
 const HeroSection = () => {
@@ -74,6 +77,8 @@ const HeroSection = () => {
     </div>
     <Service/>
     <ProductSection/>
+    <Category/>
+    <NewArrivals/>
     </>
   )
 }
