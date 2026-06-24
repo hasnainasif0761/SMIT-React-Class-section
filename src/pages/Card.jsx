@@ -7,16 +7,16 @@ import { FaHeart } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import { BsHandbag } from "react-icons/bs";
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+
 
 // Import Theme Context from ThemeContect.jsx file
 import { ThemeContext } from '../Context/ThemeProvider';
 
 
-function Card({id,title,category,price,delPrice,color,image}) {
+function Card({id,title,category,price,delPrice,color,image,onclick}) {
   // Hook React js
   const [isLike, setIsLike] = useState(false)
-  const navigate = useNavigate();
+
   const {theme,handleLike} = useContext(ThemeContext)
 
   const message = () => toast.success('Product Added To Cart');
@@ -33,9 +33,7 @@ function Card({id,title,category,price,delPrice,color,image}) {
       }
     });
     }
-    function moveAnotherPage () {
-      navigate(`/product/productdetail/${id}`)
-    }
+
   return (
     <div className='md:w-[285px] w-full h-auto  relative group px-2'>
         <div className='w-full h-[290px]  relative  overflow-hidden cursor-pointer rounded-[13px]'>            
@@ -43,7 +41,7 @@ function Card({id,title,category,price,delPrice,color,image}) {
               src={image}  
               className="relative z-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-300" 
               alt={title}
-              onClick={moveAnotherPage}
+              onClick={()=>onclick(id)}
             />
             <div className='absolute bottom-2 left-0 px-2 w-full z-10 flex items-center justify-center gap-1'>
             <Button Lefticon={BsHandbag}

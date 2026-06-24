@@ -7,11 +7,17 @@ import data from '../utils/productsCard';
 import {Link} from 'react-router-dom'
 import Breadcrumbs from './BroadCrumbs';
 import { ThemeContext } from '../Context/ThemeProvider';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function ProductSection() {
     const {theme} = useContext(ThemeContext)
+    const navigate = useNavigate();
+
+    function moveAnotherPage (id) {
+          navigate(`/product/productdetail/${id}`)
+        }
   return (
     <div className={`w-full h-auto py-3 ${theme === 'dark' ? 'bg-[#030712]' : 'bg-white'}`}>
         {/* <Breadcrumbs/> */}
@@ -29,7 +35,7 @@ function ProductSection() {
                 {
                     data.map((product,idx)=>{
                         return(
-                        <Card id={product.id} title={product.title} price={product.price} delPrice={product.delPrice} category={product.category} image={product.image} color={product.color} />
+                        <Card id={product.id} onclick={moveAnotherPage} title={product.title} price={product.price} delPrice={product.delPrice} category={product.category} image={product.image} color={product.color} />
                     )
                     })
                 }
