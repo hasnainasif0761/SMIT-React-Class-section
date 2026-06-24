@@ -10,6 +10,7 @@ import ProductSection from './ProductSection';
 import { FaArrowRight } from "react-icons/fa6";
 import Category from '../components/Category';
 import NewArrivals from '../components/NewArrivals';
+import Sale from './Sale';
 
 
 
@@ -79,6 +80,7 @@ const HeroSection = () => {
     <ProductSection/>
     <Category/>
     <NewArrivals/>
+    <Sale/>
     </>
   )
 }

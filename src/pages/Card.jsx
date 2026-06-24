@@ -62,7 +62,7 @@ function Card({id,title,category,price,delPrice,color,image,onclick}) {
         <div className='mt-2 py-1'>
             <div className='px-1 text-white flex items-center justify-between'>
               <p className='text-gray-400'>{category}</p>
-              <p className='flex items-center gap-2'><FaStar className='text-yellow-400' />4.8</p>
+              <p className={`flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-black'}`}><FaStar className='text-yellow-400' />4.8</p>
             </div>
             <div className='p-1'>
               <h3 className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-semibold truncate max-w-[220px] hover:text-[#A21CAF] cursor-pointer transition-all duration-300`}>{title}</h3>
